@@ -80,12 +80,12 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Sk
         ServerChunkManager manager = this.getServerWorld().getChunkManager();
 
         /*? if <1.21 {*/
-        /*var storage = manager.threadedAnvilChunkStorage;
+        var storage = manager.threadedAnvilChunkStorage;
         var trackerEntry = storage.entityTrackers.get(this.getId());
-        *//*?} else {*/
-        var storage = manager.chunkLoadingManager;
+        /*?} else {*/
+        /*var storage = manager.chunkLoadingManager;
         var trackerEntry = storage.entityTrackers.get(this.getId());
-        /*?}*/
+        *//*?}*/
 
         // Refreshing skin in world for all that see the player
         trackerEntry.listeners.forEach(tracking -> {
@@ -102,9 +102,9 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Sk
             this.networkHandler.sendPacket(new PlayerRespawnS2CPacket(
                     new CommonPlayerSpawnInfo(
                             //? if >=1.20.6 {
-                            level.getDimensionEntry(),
-                            //?} else
-                            /*level.getDimensionKey(),*/
+                            /*level.getDimensionEntry(),
+                            *///?} else
+                            level.getDimensionKey(),
                             level.getRegistryKey(),
                             BiomeAccess.hashSeed(level.getSeed()),
                             this.interactionManager.getGameMode(),
@@ -130,10 +130,10 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity implements Sk
 
             for (StatusEffectInstance statusEffect : this.getStatusEffects()) {
                 /*? if <1.20.6 {*/
-                /*this.networkHandler.sendPacket(new EntityStatusEffectS2CPacket(this.getId(), statusEffect));
-                *//*?} else {*/
-                this.networkHandler.sendPacket(new EntityStatusEffectS2CPacket(this.getId(), statusEffect, false));
-                /*?}*/
+                this.networkHandler.sendPacket(new EntityStatusEffectS2CPacket(this.getId(), statusEffect));
+                /*?} else {*/
+                /*this.networkHandler.sendPacket(new EntityStatusEffectS2CPacket(this.getId(), statusEffect, false));
+                *//*?}*/
             }
 
             var equipmentList = new ArrayList<Pair<EquipmentSlot, ItemStack>>();

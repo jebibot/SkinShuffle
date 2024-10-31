@@ -210,14 +210,14 @@ public class PresetEditScreen extends SpruceScreen {
                 }
                 case RESOURCE_LOCATION -> {
                     /*? if <1.21 {*/
-                    /*if (Identifier.isValid(widget.getText())) {
+                    if (Identifier.isValid(widget.getText())) {
                         return client.getResourceManager().getResource(new Identifier(widget.getText())).isPresent();
                     } else return false;
-                    *//*?} else {*/
-                    if (Identifier.validate(widget.getText()).isSuccess()) {
+                    /*?} else {*/
+                    /*if (Identifier.validate(widget.getText()).isSuccess()) {
                         return client.getResourceManager().getResource(Identifier.tryParse(widget.getText())).isPresent();
                     } else return false;
-                    /*?}*/
+                    *//*?}*/
                 }
                 case USERNAME -> {
                     return isValidUsername(widget.getText());
@@ -308,11 +308,11 @@ public class PresetEditScreen extends SpruceScreen {
     }
 
     /*? if <1.20.6 {*/
-    /*public void renderBackgroundTexture(DrawContext context) {
+    public void renderBackgroundTexture(DrawContext context) {
         // If we don't explicitly have this, the background color will be slightly off from the tab color.
         context.drawTexture(net.minecraft.client.gui.screen.world.CreateWorldScreen.LIGHT_DIRT_BACKGROUND_TEXTURE, 0, 0, 0, 0.0F, 0.0F, this.width, this.height, 32, 32);
     }
-    *//*?}*/
+    /*?}*/
 
     private float getEntityRotation() {
         return (float) GlfwUtil.getTime() * 35f;

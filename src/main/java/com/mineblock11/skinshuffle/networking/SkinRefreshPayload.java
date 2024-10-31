@@ -1,5 +1,5 @@
 /*? if >1.20.5 {*/
-package com.mineblock11.skinshuffle.networking;
+/*package com.mineblock11.skinshuffle.networking;
 
 import com.mojang.authlib.properties.Property;
 import net.minecraft.network.RegistryByteBuf;
@@ -35,4 +35,4 @@ public record SkinRefreshPayload(Property textureProperty) implements CustomPayl
         return PACKET_ID;
     }
 }
-/*?}*/
+*//*?}*/

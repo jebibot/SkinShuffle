@@ -12,9 +12,9 @@ public class MinecraftClientMixin {
     @Inject(method = "render", at = @At("HEAD"))
     public void render(boolean tick, CallbackInfo ci) {
         //? if >=1.21 {
-        SkinShuffleClient.TOTAL_TICK_DELTA += MinecraftClient.getInstance().getRenderTickCounter().getTickDelta(true);
-        //?} else {
-        /*SkinShuffleClient.TOTAL_TICK_DELTA += MinecraftClient.getInstance().getTickDelta();
-        *///?}
+        /*SkinShuffleClient.TOTAL_TICK_DELTA += MinecraftClient.getInstance().getRenderTickCounter().getTickDelta(true);
+        *///?} else {
+        SkinShuffleClient.TOTAL_TICK_DELTA += MinecraftClient.getInstance().getTickDelta();
+        //?}
     }
 }

@@ -26,10 +26,10 @@ import java.util.UUID;
 
 public interface Skin {
     /*? if >=1.20.5 {*/
-    Map<Identifier, MapCodec<? extends Skin>> TYPES = Map.of(
-    /*?} else {*/
-    /*Map<Identifier, Codec<? extends Skin>> TYPES = Map.of(
-    *//*?}*/
+    /*Map<Identifier, MapCodec<? extends Skin>> TYPES = Map.of(
+    *//*?} else {*/
+    Map<Identifier, Codec<? extends Skin>> TYPES = Map.of(
+    /*?}*/
             UrlSkin.SERIALIZATION_ID, UrlSkin.CODEC,
             ResourceSkin.SERIALIZATION_ID, ResourceSkin.CODEC,
             ConfigSkin.SERIALIZATION_ID, ConfigSkin.CODEC,

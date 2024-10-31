@@ -60,16 +60,16 @@ public class GuiEntityRenderer {
 
     private static void setupModelViewStack() {
         //? if >=1.20.5 {
-        Matrix4fStack modelViewStack = RenderSystem.getModelViewStack();
+        /*Matrix4fStack modelViewStack = RenderSystem.getModelViewStack();
         modelViewStack.pushMatrix();
         modelViewStack.translate(0.0f, 0.0f, 1000.0f);
         RenderSystem.applyModelViewMatrix();
-        //?} else {
-        /*MatrixStack modelViewStack = RenderSystem.getModelViewStack();
+        *///?} else {
+        MatrixStack modelViewStack = RenderSystem.getModelViewStack();
         modelViewStack.push();
         modelViewStack.translate(0.0, 0.0, 1000.0);
         RenderSystem.applyModelViewMatrix();
-        *///?}
+        //?}
     }
 
     private static void setupMatrices(MatrixStack matrices, int x, int y, int size, Quaternionf entityRotation) {
@@ -101,10 +101,10 @@ public class GuiEntityRenderer {
                 LightmapTextureManager.MAX_LIGHT_COORDINATE,
                 OverlayTexture.DEFAULT_UV,
                 //? if >=1.21 {
-                0xFFFFFFFF
-                //?} else {
-                /*1f, 1f, 1f, 1f
-                *///?}
+                /*0xFFFFFFFF
+                *///?} else {
+                1f, 1f, 1f, 1f
+                //?}
         );
 
         //? if =1.20.1 {
@@ -138,14 +138,14 @@ public class GuiEntityRenderer {
 
     private static void cleanupModelViewStack() {
         //? if >=1.20.5 {
-        Matrix4fStack modelViewStack = RenderSystem.getModelViewStack();
+        /*Matrix4fStack modelViewStack = RenderSystem.getModelViewStack();
         modelViewStack.popMatrix();
         RenderSystem.applyModelViewMatrix();
-        //?} else {
-        /*MatrixStack modelViewStack = RenderSystem.getModelViewStack();
+        *///?} else {
+        MatrixStack modelViewStack = RenderSystem.getModelViewStack();
         modelViewStack.pop();
         RenderSystem.applyModelViewMatrix();
-        *///?}
+        //?}
     }
 
     public static class NoEntityPlayerModel extends PlayerEntityModel {

@@ -75,10 +75,10 @@ public class SkinPresetManager {
         for (SkinPreset loadedPreset : loadedPresets) {
             DataResult<JsonElement> dataResult = SkinPreset.CODEC.encodeStart(JsonOps.INSTANCE, loadedPreset);
             /*? <1.20.5 {*/
-            /*array.add(dataResult.getOrThrow(false, SkinShuffle.LOGGER::error));
-            *//*?} else {*/
-            array.add(dataResult.result().orElseThrow(() -> new RuntimeException("Failed to encode skin preset.")));
-            /*?}*/
+            array.add(dataResult.getOrThrow(false, SkinShuffle.LOGGER::error));
+            /*?} else {*/
+            /*array.add(dataResult.result().orElseThrow(() -> new RuntimeException("Failed to encode skin preset.")));
+            *//*?}*/
         }
         presetFile.add("loadedPresets", array);
 
@@ -122,10 +122,10 @@ public class SkinPresetManager {
             for (JsonElement jsonElement : array) {
                 DataResult<Pair<SkinPreset, JsonElement>> dataResult = SkinPreset.CODEC.decode(JsonOps.INSTANCE, jsonElement);
                 /*? <1.20.5 {*/
-                /*Pair<SkinPreset, JsonElement> pair = dataResult.getOrThrow(false, SkinShuffle.LOGGER::error);
-                *//*?} else {*/
-                Pair<SkinPreset, JsonElement> pair = dataResult.result().orElseThrow(() -> new RuntimeException("Failed to decode skin preset."));
-                /*?}*/
+                Pair<SkinPreset, JsonElement> pair = dataResult.getOrThrow(false, SkinShuffle.LOGGER::error);
+                /*?} else {*/
+                /*Pair<SkinPreset, JsonElement> pair = dataResult.result().orElseThrow(() -> new RuntimeException("Failed to decode skin preset."));
+                *//*?}*/
                 SkinPreset preset = pair.getFirst();
                 loadedPresets.add(preset);
             }

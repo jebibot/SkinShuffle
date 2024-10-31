@@ -35,7 +35,7 @@ public class SkinShuffle implements ModInitializer {
     @Override
     public void onInitialize() {
         /*? if >=1.20.5 {*/
-        net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playC2S().register(
+        /*net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playC2S().register(
                 com.mineblock11.skinshuffle.networking.SkinRefreshPayload.PACKET_ID,
                 com.mineblock11.skinshuffle.networking.SkinRefreshPayload.PACKET_CODEC
         );
@@ -47,7 +47,7 @@ public class SkinShuffle implements ModInitializer {
                 com.mineblock11.skinshuffle.networking.RefreshPlayerListEntryPayload.PACKET_ID,
                 com.mineblock11.skinshuffle.networking.RefreshPlayerListEntryPayload.PACKET_CODEC
         );
-        /*?}*/
+        *//*?}*/
         
         ensureDataDir();
         SkinCacheRegistry.initialize();

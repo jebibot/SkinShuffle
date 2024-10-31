@@ -46,12 +46,12 @@ public class ClientSkinHandling {
 
     public static void sendRefresh(SkinQueryResult result) {
         /*? <1.20.5 {*/
-        /*PacketByteBuf buf = PacketByteBufs.create();
+        PacketByteBuf buf = PacketByteBufs.create();
         buf.writeProperty(result.toProperty());
         ClientPlayNetworking.send(SkinShuffle.id("refresh"), buf);
-        *//*?} else {*/
-        ClientPlayNetworking.send(new SkinRefreshPayload(result.toProperty()));
-        /*?}*/
+        /*?} else {*/
+        /*ClientPlayNetworking.send(new SkinRefreshPayload(result.toProperty()));
+        *//*?}*/
     }
 
     public static void init() {
@@ -72,7 +72,7 @@ public class ClientSkinHandling {
         });
 
         /*? <1.20.5 {*/
-        /*ClientPlayNetworking.registerGlobalReceiver(SkinShuffle.id("handshake"), (client1, handler1, buf, responseSender) -> {
+        ClientPlayNetworking.registerGlobalReceiver(SkinShuffle.id("handshake"), (client1, handler1, buf, responseSender) -> {
             handshakeTakenPlace = true;
         });
 
@@ -88,8 +88,8 @@ public class ClientSkinHandling {
                 }
             });
         });
-        *//*?} else {*/
-        ClientPlayNetworking.registerGlobalReceiver(HandshakePayload.PACKET_ID, (payload, context) -> {
+        /*?} else {*/
+        /*ClientPlayNetworking.registerGlobalReceiver(HandshakePayload.PACKET_ID, (payload, context) -> {
             handshakeTakenPlace = true;
         });
 
@@ -106,6 +106,6 @@ public class ClientSkinHandling {
                 }
             });
         });
-        /*?}*/
+        *//*?}*/
     }
 }

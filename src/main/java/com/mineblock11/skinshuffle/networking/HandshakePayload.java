@@ -1,5 +1,5 @@
 /*? if >=1.20.5 {*/
-package com.mineblock11.skinshuffle.networking;
+/*package com.mineblock11.skinshuffle.networking;
 
 import net.minecraft.network.packet.CustomPayload;
 import net.minecraft.util.Identifier;
@@ -13,4 +13,4 @@ public record HandshakePayload() implements CustomPayload {
         return PACKET_ID;
     }
 }
-/*?}*/
+*//*?}*/
